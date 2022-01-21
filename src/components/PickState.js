@@ -1,19 +1,23 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 export default function Test() {
   const [states, setStates] = useState([]);
 
-  const defaultState = "Select a state";
-
+  let isRendered = useRef(false);
   useEffect(() => {
+    isRendered = true;
     axios
       .get("https://frontend-take-home.fetchrewards.com/form")
       .then((response) => setStates(response.data.states));
   }, []);
 
   const lives = states.map((state) => {
-    return <option>{state.abbreviation}</option>;
+    return (
+      <option key={state.id} value={state.abbreviation}>
+        {state.abbreviation}
+      </option>
+    );
   });
   {
     return (
