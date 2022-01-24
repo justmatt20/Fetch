@@ -22,9 +22,10 @@ export default function Test() {
   {
     return (
       <div className="flex flex-col space-y-1">
+        <label className="text-orange">Select an occupation*:</label>
         <select
           defaultValue="Select an occupation"
-          className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow "
+          className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow mb-6 "
           required
         >
           {works}
