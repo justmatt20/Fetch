@@ -87,11 +87,15 @@ function TestForm2() {
               />
             </div>
 
-            <PickJob />
-            <PickState
-              onCLick={handleClick}
+            <PickJob
+              occupation={values.occupation}
+              onClick={handleClick}
               onChange={set}
+            />
+            <PickState
               state={values.state}
+              onClick={handleClick}
+              onChange={set}
             />
 
             <div className="flex flex-col sp ace-y-1">

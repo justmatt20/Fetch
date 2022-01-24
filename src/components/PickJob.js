@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-export default function Test() {
+export default function Test({ occupation, set }) {
   const [jobs, setJobs] = useState([]);
+  const [busy, setBusy] = useState("");
 
   let isRendered = useRef(false);
   useEffect(() => {
@@ -19,14 +20,25 @@ export default function Test() {
       </option>
     );
   });
+  const handleChange = (e) => {
+    setBusy(e.target.value);
+    console.log(busy);
+  };
+
+  useEffect(() => {
+    console.log(busy);
+  }, [busy]);
   {
     return (
       <div className="flex flex-col space-y-1">
         <label className="text-orange">Select an occupation*:</label>
         <select
-          defaultValue="Select an occupation"
-          className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow mb-6 "
+          className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow "
           required
+          name="occupation"
+          value={occupation.busy}
+          onChange={handleChange}
+          onClick={set}
         >
           {works}
         </select>
