@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
-export default function Test({ occupation, set }) {
+export default function Test({ info, handleChange }) {
   const [jobs, setJobs] = useState([]);
   const [busy, setBusy] = useState("");
 
@@ -20,14 +20,7 @@ export default function Test({ occupation, set }) {
       </option>
     );
   });
-  const handleChange = (e) => {
-    setBusy(e.target.value);
-    console.log(busy);
-  };
 
-  useEffect(() => {
-    console.log(busy);
-  }, [busy]);
   {
     return (
       <div className="flex flex-col space-y-1">
@@ -36,9 +29,8 @@ export default function Test({ occupation, set }) {
           className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow "
           required
           name="occupation"
-          value={occupation.busy}
+          value={info}
           onChange={handleChange}
-          onClick={set}
         >
           {works}
         </select>

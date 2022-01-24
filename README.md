@@ -35,8 +35,8 @@ You may also see any lint errors in the console.
 
 ### Future Features
 
-- Improved password input
-- Robust Form Validation
-- A module or proper alert for success or errors
+1. Improved password input
+2. Robust Form Validation
+3. A module or proper alert for success or errors
 
 # Fetch
