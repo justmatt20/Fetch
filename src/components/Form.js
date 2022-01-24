@@ -52,7 +52,7 @@ function TestForm2() {
         </h1>
 
         <div className="object-fill flex-col bg-white p-10 rounded-lg shadow space-y-6">
-          <form>
+          <form action="#">
             <h1 className="font-bold text-xl text-center text-purple underline decoration-orange ">
               Create an Account
             </h1>
