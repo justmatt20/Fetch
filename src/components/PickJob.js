@@ -3,7 +3,6 @@ import axios from "axios";
 
 export default function Test({ info, handleChange }) {
   const [jobs, setJobs] = useState([]);
-  const [busy, setBusy] = useState("");
 
   let isRendered = useRef(false);
   useEffect(() => {
@@ -23,8 +22,8 @@ export default function Test({ info, handleChange }) {
 
   {
     return (
-      <div className="flex flex-col space-y-1">
-        <label className="text-orange">Select an occupation*:</label>
+      <div className="flex flex-col space-y-1 ">
+        <label className="text-orange ">Select an occupation*:</label>
         <select
           className="border-2 rounded px-3 py-2 w-full focus:outline-orange focus:border-blue-400 focus:shadow "
           required

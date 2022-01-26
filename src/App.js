@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import axios from "axios";
 import Form from "./components/Form";
+
 import PickState from "./components/PickState";
 import PickJob from "./components/PickJob";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -21,7 +22,14 @@ class App extends Component {
     };
   }
 
-  dog = () => <FontAwesomeIcon icon={faDog} />;
+  dog = () => <FontAwesomeIcon icon={faDog} className="text-orange mr-2" />;
+  spinDog = () => (
+    <FontAwesomeIcon
+      icon={faDog}
+      spin="spin"
+      className="text-orange ml-2 text-md"
+    />
+  );
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -34,22 +42,25 @@ class App extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const info = this.state.info;
+
     axios
       .post("https://frontend-take-home.fetchrewards.com/form", this.state.info)
       .then(() => {
-        if (
-          info.name === "" ||
-          info.email === "" ||
-          info.password === "" ||
-          info.occupation === "" ||
-          info.state === ""
-        ) {
-          alert("Please fill out all fields");
-        } else {
-          alert(
-            `Thank you for submitting your information, ${this.state.info.name}! `
-          );
-          console.log(this.state.info);
+        {
+          if (
+            info.name === "" ||
+            info.email === "" ||
+            info.password === "" ||
+            info.occupation === "" ||
+            info.state === ""
+          ) {
+            alert("Please fill out all fields");
+          } else {
+            alert(
+              `Thank you for submitting your information, ${this.state.info.name}! `
+            );
+            console.log(this.state.info);
+          }
         }
       })
       .catch((e) => console.log(e));
@@ -66,7 +77,7 @@ class App extends Component {
             <h1 className="font-bold text-center text-4xl text-orange">
               Take Home{" "}
             </h1>
-            <div className="object-fill flex-col bg-white p-10 rounded-lg shadow space-y-6">
+            <div className="object-fill flex-col bg-white p-10 rounded-lg shadow space-y-6  ">
               <h1 className="font-bold text-xl text-center text-purple underline decoration-orange ">
                 Create an Account
               </h1>
@@ -89,13 +100,18 @@ class App extends Component {
                 <button
                   type="submit"
                   onClick={this.handleSubmit}
-                  className="bg-purple text-white font-bold px-5 py-2 rounded  focus:outline-none shadow hover:bg-blue-700 transition-colors mt-6"
+                  className="bg-purple  text-white font-bold px-5 py-2 rounded  focus:outline-none shadow hover:bg-blue-700 transition-colors mt-6"
                 >
                   {this.dog()} {""}
                   Submit
                 </button>
-                <p className="text-sm text-purple text-opacity-50">*required</p>
+                <p className="text-sm text-purple text-opacity-50 ">
+                  *required
+                </p>
               </div>
+            </div>
+            <div className="flex justify-center text-white text-sm">
+              <p>&copy;2022. I love dogs too. {this.spinDog()}</p>
             </div>
           </div>
         </div>
