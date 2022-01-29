@@ -13,7 +13,7 @@ export default function Header() {
             <div className="text-3xl text-purple">
               {dog} {""}
               <a className="text-md font-bold text-purple underline decoration-white transition-colors duration-200 transform  md:text-3xl hover:text-gray-700 ">
-                Fetch Rewards Frontend Take Home
+                A simple Sign Up Form
               </a>
             </div>
           </div>

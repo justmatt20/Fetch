@@ -75,7 +75,7 @@ class App extends Component {
           <div className="flex flex-col  justify-center sm:w-96 sm:m-auto mx-5 mb-5 space-y-8">
             {" "}
             <h1 className="font-bold text-center text-4xl text-orange">
-              Take Home{" "}
+              Sign Up{" "}
             </h1>
             <div className="object-fill flex-col bg-white p-10 rounded-lg shadow space-y-6  ">
               <h1 className="font-bold text-xl text-center text-purple underline decoration-orange ">
@@ -111,7 +111,7 @@ class App extends Component {
               </div>
             </div>
             <div className="flex justify-center text-white text-sm">
-              <p>&copy;2022. I love dogs too. {this.spinDog()}</p>
+              <p>&copy;2022. I love dogs. {this.spinDog()}</p>
             </div>
           </div>
         </div>
