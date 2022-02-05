@@ -1,4 +1,4 @@
-# Fetch Take Home (Frontend)
+# Simple Sign Up Form
 
 React form with inputs and dropdowns made for Fetch Rewards.
 
@@ -8,7 +8,7 @@ Fetch Take Home is a form made with react. Users can type in their name, email, 
 
 ### Themes and Styling
 
-This react app uses Lexand font from Google fonts and the main colors are orange and purple to march Fetch Rewards' color scheme. Additional styling information can be found in the tailwind.config.js
+This react app uses Lexand font from Google fonts and the main colors are orange and purple. Additional styling information can be found in the tailwind.config.js
 
 ## Available Scripts
 
@@ -29,9 +29,6 @@ You may also see any lint errors in the console.
 - Axios
 - Font Awesome
 
-### Screenshot
-
-![screenshot](public/fetch.png "Screenshot")
 
 ### Future Features
 
@@ -39,4 +36,4 @@ You may also see any lint errors in the console.
 2. Robust Form Validation
 3. A module or proper alert for success or errors
 
-# Fetch
+# SignUp
